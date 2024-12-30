@@ -1,0 +1,197 @@
+/* General Styling */
+
+@keyframes fadeInAndMove {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes switchBack {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  /* background: linear-gradient(120deg, #0f0f0f, #5a189a); */
+  background: black;
+  margin: 0;
+  padding: 0;
+  animation: fadeInAndMove 2s ease-in-out;
+}
+
+header.hero {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+header.hero h1 {
+  /* BAASIR'S WEB */
+  background-color: black;
+  font-size: 5rem;
+  /* border-radius: 50px; */
+  animation: fadeInAndMove 2s ease-in-out;
+  margin-bottom: 0px;
+}
+.switch-back-animationmain {
+  animation: switchBack 0.5s ease-in-out;
+}
+
+/* Personal Portfolio */
+div.slogan {
+  font-size: 1.5rem;
+  animation: fadeInAndMove 2s ease-in-out;
+  background: linear-gradient(90deg, #ff7eb3, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold; /* Optional for styling */
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+header img {
+  /* display: flex; */
+  margin: 0 auto;
+  width: 1280px;
+  height: 600px;
+  /* border-radius: 50%; */
+  box-shadow: #ec0442;
+  /* border: 5px solid #0c0c0c;  */
+}
+
+section.mypic {
+  display: flex;
+  justify-content: center; /* Align content to the left */
+  margin-left: 20px; /* Optional: space from the left edge */
+}
+
+section.mypic img {
+  width: 200px; /* Adjust image size */
+  height: 200px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the circle */
+  margin-right: 20px; /* Space between image and any content to the right */
+}
+
+
+section.about {
+  text-align: center;
+  padding: 20px;
+}
+
+section.about h2 {
+  /* CONTAINS THE HEADLINE ABOUT */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(223, 6, 223);
+  font-size: 2rem;
+  transition: opacity 0.5s ease-in-out;
+}
+.switch-back-animation {
+  animation: switchBack 0.5s ease-in-out;
+}
+
+div.aboutSummary {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+audio {
+  margin-bottom: 0px;
+  border-radius: 40px;
+  margin-top: 20px;
+  border: none;
+}
+
+section.achievements {
+  /* text-align: center; */
+  padding: 30px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  border-radius: 100px;
+  margin: 10px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+section.achievements h3 {
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+section.achievements ul {
+  /* list of achivements */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  animation: fadeInAndMove 3s ease-in-out;
+  text-align: center;
+}
+
+section.skills {
+  text-align: center;
+  padding: 30px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  margin: 30px auto;
+  margin-top: 0;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+section.skills ul {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style: none;
+}
+
+section.skills li {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 30px;
+}
+
+section.skills li img:hover {
+  border-radius: 50px;
+  border-color: rgb(244, 191, 2);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px 20px rgba(244, 191, 2, 0.5); /* Adds a shadow */
+}
+
+span.highlight {
+  color: #ffcc00;
+}
+
+section.skills h2 {
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 50px;
+  background: rgb(7, 7, 7);
+  font-size: 0.9rem;
+}
