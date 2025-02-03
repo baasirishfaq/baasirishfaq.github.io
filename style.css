@@ -11,50 +11,52 @@
   }
 }
 
-@keyframes switchBack {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #fff;
-  /* background: linear-gradient(120deg, #0f0f0f, #5a189a); */
   background: black;
   margin: 0;
   padding: 0;
   animation: fadeInAndMove 2s ease-in-out;
 }
 
+section.topmenu {
+  background-color: #ec0442;
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  gap: 540px; /* Add space between the items */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+section.topmenu :hover {
+  transform: scale(1.2);
+  transition: ease-in-out;
+}
+
 header.hero {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
-  color: #fff;
 }
 
 header.hero h1 {
-  /* BAASIR'S WEB */
-  background-color: black;
+  margin-top: 0;
   font-size: 5rem;
-  /* border-radius: 50px; */
-  animation: fadeInAndMove 2s ease-in-out;
+  animation: fadeInAndMove 5s ease-in-out;
   margin-bottom: 0px;
 }
-.switch-back-animationmain {
-  animation: switchBack 0.5s ease-in-out;
+
+header.hero h1 .second-part {
+  background-image: none; /* No gradient for the second part */
+  color: red; /* Set the second part to red */
+  -webkit-background-clip: unset; /* Remove the background clip effect */
+  -webkit-text-fill-color: unset; /* Remove the text fill color effect */
 }
 
 /* Personal Portfolio */
 div.slogan {
   font-size: 1.5rem;
-  animation: fadeInAndMove 2s ease-in-out;
+  animation: fadeInAndMove 5s ease-in-out;
   background: linear-gradient(90deg, #ff7eb3, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -68,118 +70,144 @@ header img {
   margin: 0 auto;
   width: 1280px;
   height: 600px;
-  /* border-radius: 50%; */
   box-shadow: #ec0442;
   /* border: 5px solid #0c0c0c;  */
 }
 
-section.mypic {
+section.topimg {
+  justify-content: center;
   display: flex;
-  justify-content: center; /* Align content to the left */
-  margin-left: 20px; /* Optional: space from the left edge */
+  gap: 470px;
+}
+
+section.mypic {
+  margin-top: 50px;
+  display: flex;
+  justify-content: left; /* Align content to the left */
 }
 
 section.mypic img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 200px; /* Adjust image size */
   height: 200px; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image covers the circle */
-  margin-right: 20px; /* Space between image and any content to the right */
 }
 
+section.mypic img:hover {
+  transform: scale(1.1);
+  /* box-shadow: 0px 0px 3px 3px rgba(1000, 9, 9, 300); Adds a shadow */
+}
 
-section.about {
-  text-align: center;
-  padding: 20px;
+/* LINKEDIN GITHUB LEETCODE IMAGES */
+section.socials {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Makes the icons stack vertically */
+  gap: 40px; /* Adds space between the icons */
+  margin-bottom: 0px;
+}
+
+section.socials img:hover {
+  transform: scale(1.2);
+}
+
+section.socials img {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* CONTINUE ARROW */
+section.arrowimg {
+  margin-top: 110px;
+}
+
+section.arrowimg img {
+  animation: glowAnimation 3s ease-in-out infinite;
+  border: none;
+  outline: none;
+  background: transparent; /* Ensure no background color interferes */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+section.arrowimg img:hover {
+  transform: scale(1.2);
+}
+
+/* Glowing Animation */
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 300px rgba(255, 0, 0, 0.6), 0 0 300px rgba(0, 255, 255, 0.6); /* Cyan and red soft glow */
+  }
+  50% {
+    box-shadow: 0 0 800px rgba(179, 0, 0, 1), 0 0 800px rgba(0, 179, 255, 1); /* Intense red and blue glow */
+  }
+  100% {
+    box-shadow: 0 0 300px rgba(255, 0, 0, 0.6), 0 0 300px rgba(0, 255, 255, 0.6); /* Back to soft glow */
+  }
 }
 
 section.about h2 {
-  /* CONTAINS THE HEADLINE ABOUT */
+  /* CONTAINS THE HEADLINE ABOUT  */
+
+  margin-top: 0px;
+  margin-bottom: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(223, 6, 223);
   font-size: 2rem;
   transition: opacity 0.5s ease-in-out;
+  text-align: center;
 }
 .switch-back-animation {
   animation: switchBack 0.5s ease-in-out;
 }
 
 div.aboutSummary {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-audio {
-  margin-bottom: 0px;
-  border-radius: 40px;
-  margin-top: 20px;
-  border: none;
-}
-
-section.achievements {
-  /* text-align: center; */
-  padding: 30px;
-  /* background: rgba(255, 255, 255, 0.1); */
-  border-radius: 100px;
-  margin: 10px auto;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* CONTAINS THE SUMMARY ABOUT ME */
+  text-align: center;
+  align-items: center;
+  width: 100%; /* Ensure it spans the full width of the parent container */
+  box-sizing: border-box; /* Include padding and border in the element's width */
+  padding: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 section.achievements h3 {
-  text-align: center;
+  /* SOME OF BAASIR'S ACHIEVEMENTS */
+  text-align: left;
+  margin-left: 60px;
+  font-size: 1.2rem;
   color: #ffcc00;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
 }
 
 section.achievements ul {
-  /* list of achivements */
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  list-style: none;
   padding: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  animation: fadeInAndMove 3s ease-in-out;
-  text-align: center;
+  list-style: none;
 }
+
+section.achievements li {
+  /* LIST OF ACHIVEMENTS */
+  list-style: none;
+  font-size: 0.9rem;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 820px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section.achievements li:hover {
+  color: white; /* Apply color change when hovered */
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* ACHIEVEMENTS CSS HERE */
 
 section.skills {
   text-align: center;
-  padding: 30px;
-  /* background: rgba(255, 255, 255, 0.1); */
-  margin: 30px auto;
-  margin-top: 0;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-section.skills ul {
-  display: flex;
-  justify-content: center; /* Center items horizontally */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  list-style: none;
-}
-
-section.skills li {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 0 30px;
-}
-
-section.skills li img:hover {
-  border-radius: 50px;
-  border-color: rgb(244, 191, 2);
-  transform: scale(1.1);
-  box-shadow: 0px 0px 20px 20px rgba(244, 191, 2, 0.5); /* Adds a shadow */
-}
-
-span.highlight {
-  color: #ffcc00;
+  align-items: center;
 }
 
 section.skills h2 {
@@ -189,8 +217,33 @@ section.skills h2 {
   font-size: 1.5rem;
 }
 
+section.skills ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style: none;
+}
+
+section.skills li {
+  margin: 0 30px;
+}
+
+section.skills li img {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.skills li img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 3px 3px rgba(1000, 9, 9, 300); /*Adds a shadow*/
+}
+
 footer {
+  margin-top: 0;
   text-align: center;
+  display: inline;
   padding-bottom: 50px;
   background: rgb(7, 7, 7);
   font-size: 0.9rem;
