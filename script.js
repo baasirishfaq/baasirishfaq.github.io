@@ -1,47 +1,74 @@
-const achievementItems = document.querySelectorAll("section.achievements li");
+// const aboutHeading = document.querySelector("section.about h2");
 
-achievementItems.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    item.style.color = "white";
-    item.style.fontWeight = "bold";
-    item.style.fontSize = "20px";
-  });
+// function changeToAboutMe() {
+//   aboutHeading.textContent = "About";
+//   aboutHeading.classList.add("switch-back-animation");
+// }
 
-  item.addEventListener("mouseout", () => {
-    item.style.color = ""; // Reset to default
-    item.style.fontWeight = "";
-    item.style.fontSize = "";
-  });
-});
+// function switchBackToAbout() {
+//   aboutHeading.textContent = "Me";
+//   aboutHeading.classList.add("switch-back-animation");
+// }
 
-const heroHeading = document.querySelector("header.hero h1");
+// setInterval(() => {
+//   if (aboutHeading.textContent === "Me") {
+//     changeToAboutMe();
+//   } else {
+//     switchBackToAbout();
+//   }
+// }, 3000);
 
-function triggerAnimation() {
-  heroHeading.style.animation = "none"; // Reset animation
-  setTimeout(() => {
-    heroHeading.style.animation = "fadeInAndMove 2s ease-in-out"; // Reapply animation
-  }, 10); // Small delay to ensure reset works
+const headline = document.querySelector("header.hero h1");
+
+function changeToBaasirsWeb() {
+  headline.innerHTML = '<span class="first-part">Baasir\'s</span> <span class="second-part">web</span>';
+  headline.classList.remove("switch-back-animation"); // Remove any previous animation class
+  headline.classList.add("switch-to-animation"); // Add a relevant animation class
 }
 
-
-heroHeading.addEventListener("click", triggerAnimation);
-
-const aboutHeading = document.querySelector("section.about h2");
-
-function changeToAboutMe() {
-  aboutHeading.textContent = "About";
-  aboutHeading.classList.add("switch-back-animation");
-}
-
-function switchBackToAbout() {
-  aboutHeading.textContent = "Me";
-  aboutHeading.classList.add("switch-back-animation");
+function switchBackToWelcome() {
+  headline.innerHTML = '<span class="first-part">Welcome</span> <span class="second-part">To</span>';
+  headline.classList.remove("switch-to-animation"); // Remove any previous animation class
+  headline.classList.add("switch-back-animation"); // Add a relevant animation class
 }
 
 setInterval(() => {
-  if (aboutHeading.textContent === "Me") {
-    changeToAboutMe();
+  if (headline.querySelector(".first-part").textContent === "Welcome") {
+    changeToBaasirsWeb();
   } else {
-    switchBackToAbout();
+    switchBackToWelcome();
   }
-}, 3000);
+}, 5000);
+
+
+
+
+const achievements = [
+  "Passed High School with distinction",
+  "Accepted to University of Waterloo (Geomatics)",
+  "Accepted to University of Guelph Computer Science Honors",
+  "Awarded the President's Scholarship",
+  'Awarded the <span class="highlight">Gold Badge</span> in C++ by <a href="https://www.hackerrank.com/baasirishfaq" title="Go to Baasir\'s HackerRank" target="_blank"><span style="color: rgb(252, 249, 249);">HackerRank</span></a>',
+  "Rated as a 5-Star Coder by HackerRank",
+];
+
+const achievementsSection = document.querySelector(".achievements");
+let currentIndex = 0;
+
+function displayNextAchievement() {
+  // Clear the section content
+  achievementsSection.innerHTML = `
+    <h3>Some of my Achievements:</h3>
+    <li>${achievements[currentIndex]}</li>
+  `;
+
+  // Update the index to show the next achievement
+  currentIndex = (currentIndex + 1) % achievements.length; // Loop back to the first achievement
+}
+
+// Start cycling achievements every 3 seconds
+setInterval(displayNextAchievement, 3000);
+
+// Show the first achievement on load
+displayNextAchievement();
+
