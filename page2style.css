@@ -1,0 +1,157 @@
+/* STYLING FOR PAGE 2 */
+
+@keyframes fadeInAndMove {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    background: black;
+    animation: fadeInAndMove 2s ease-in-out;
+  }
+  
+  /* for the top menu containing home button etc */
+  /* Styling for the navigation bar */
+  section.topmenu {
+    text-align: center;
+    display: flex;
+    gap : 50px;
+  
+  }
+  
+  section.topmenu li{
+    color: #ff00b3;
+    border-radius:5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    
+  }
+  
+  /* for experience the headline */
+  
+  /* Experience Section */
+  .exp {
+    background: linear-gradient(to right, black, #333333);  /* Dark gradient background */
+    color: #e0e0e0;  /* Light gray text for contrast */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  }
+  
+  .exp h1 {
+    color: #ff00b3;  /* Neon Pink for title */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 0, 179, 0.8); /* Glowing pink text effect */
+  }
+  
+  /* Job Card Styles */
+  .job {
+    background-color: black;  /* Dark card background */
+    padding: 25px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);  /* Glow effect on cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Job Title (H3) */
+  .job h3 {
+    color: #4e7dff;  /* Neon Blue for job titles */
+    font-size: 1.5rem;   /* font size for job titles*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(67, 117, 254, 0.881); /* Glowing blue text effect */
+  }
+  
+  /* Job Information (P) */
+  .job p {
+    color: #e0e0e0;  /* Light gray text for job details */
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Lists (Responsibilities) */
+  .job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .job li {
+    color: #b3b3b3;  /* Lighter gray for list items */
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Hover Effects */
+  .job:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 25px rgba(78, 125, 255, 0.5);  /* Blue neon shadow */
+  }
+  
+  /* Links */
+  .job a {
+    color: #4e7dff;  /* Neon Blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .job a:hover {
+    color: #ff00b3;  /* Hover effect: Neon Pink on links */
+  }
+  
+  
+  /* for technincal skills and logos */
+  
+  section.skills {
+    align-items: center;
+  
+  }
+  
+  section.skills h2 {
+    text-align: center;
+    color: #ff00b3;
+    font-size: 1.5rem;
+  }
+  
+  section.skills ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  
+  section.skills li {
+    margin: 0 30px;
+  }
+  
+  section.skills li img {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  section.skills li img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 3px 3px rgba(1000, 9, 9, 300); /*Adds a shadow*/
+  }
+  
+  footer {
+    margin-top: 0;
+    text-align: center;
+    display: inline;
+    padding-bottom: 50px;
+    background: rgb(7, 7, 7);
+    font-size: 0.9rem;
+  }
+  
