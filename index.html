@@ -2,81 +2,140 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baasir Ishfaq | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <title>Welcome to Baasir's portfolio</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <!-- Page 1 -->
-    <header class="hero">
-        <h1><span class="first-part">Baasir's</span> <span class="second-part">web</span></h1>
-        <div class="slogan">Personal Portfolio</div>
+    <header>
+        <nav>
+            <div class="logo">BAASIR ISHFAQ</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="page2.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="topimg">
-        <section class="socials">
-            <img src="" alt="">
-            <a href="https://www.linkedin.com/in/baasirishfaq/" target="_blank"><img src="photos/linkedin logo.png"
-                    title="Linkedin" alt=""></a>
-            <a href="https://github.com/baasirishfaq" target="_blank"><img src="photos/github logo.png"
-                    title="Github"></a>
-            <a href="https://leetcode.com/u/baasirishfaq/" target="_blank"><img src="photos/leetcode logo.png"
-                    title="Leetcode" alt=""></a>
-        </section>
-        <section class="mypic"><img src="photos/marvel2.png" title="Thats Me" alt=""></section>
-        <section class="arrowimg">
-            <a href="page2.html"><img src="photos/right arrow.png" title="Next Page" alt=""></a>
-            <br>
-            <a href="page2.html"><span
-                    style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Continue</span></a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Computer Science Student & Developer</h1>
+                <p class="subtitle">I build digital solutions and solve complex problems</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn">Learn more about me</a>
+                    <a href="page2.html" class="btn btn-outline">View my projects</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </section>
 
-    </section>
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Hello! I'm Baasir, a passionate Computer Science scholar at the University of Guelph specializing in 
+                           algorithm design and full-stack development. My work bridges theoretical computer science with 
+                           practical software engineering solutions.</p>
+                    
+                        <p>As a <strong>5-star C++ Gold Badge recipient on HackerRank</strong> (top 2% globally), I've demonstrated 
+                           advanced problem-solving capabilities through 200+ optimized algorithm implementations. My technical 
+                           toolkit includes:</p>
+                    
+                        <div class="skills">
+                            <h3>Core Competencies</h3>
+                            <ul class="skills-list">
+                                <li><i class="fas fa-microchip"></i> High-performance C++17/20 Development</li>
+                                <li><i class="fab fa-python"></i> Python Data Structures & Automation</li>
+                                <li><i class="fas fa-project-diagram"></i> Algorithm Design & Optimization</li>
+                                <li><i class="fas fa-trophy"></i> Competitive Programming</li>
+                                <li><i class="fas fa-laptop-code"></i> Full-Stack Web (React/Tailwind/css/js)</li>
+                                <li><i class="fas fa-robot"></i> Raspberry Pi Embedded Systems</li>
+                            </ul>
+                        </div>
+                        <p>My recent achievements include:</p>
+                        <ul class="achievement-list">
+                            <li>
+                                <span class="achievement-icon">🏆</span>
+                                <strong>President's Scholar</strong> - Awarded to of incoming students at UoGuelph for high academic average.
 
+                            </li>
+                            <li>
+                                <span class="achievement-icon">💻</span>
+                                <strong>Developer</strong> - Guelph CoCreCO Engineering Club: Raspberry Pi image recognition project and Web Dev.
+                            </li>
+                            <li>
+                                <span class="achievement-icon">🚀</span>
+                                <strong>HackCanada Participant</strong> - Waterloo, Canada (developed Visual assistance system for the visually impaired).
+                            </li>
+                            <li>
+                                <span class="achievement-icon">🏅</span>
+                                <strong>Double Scholarship Recipient</strong> - Merit & President's awards for academic excellence.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/baasirishfaq/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/baasirishfaq" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://leetcode.com/u/baasirishfaq/" target="_blank" aria-label="LeetCode">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <div class="aboutSummary">
-            Baasir is a first-year Computer Science student at the University of Guelph with expertise in C++,
-            Python, and data structures. A 5 star rated coder on HackerRank and a Gold Badge holder, Baasir excels in
-            problem-solving and software development. He's also the recipient of multiple scholarships and enjoys
-            attending workshops and networking with others. This portfolio highlights his journey, skills, and projects
-            in tech.
+    <footer id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm currently looking for internship opportunities and would love to connect!</p>
+            <a href="mailto:bishfaq@uoguelph.ca" class="email-link">bishfaq@uoguelph.ca</a>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/baasirishfaq/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/baasirishfaq" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/u/baasirishfaq/" target="_blank"><i class="fas fa-code"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Baasir Ishfaq. All rights reserved.</p>
+            </div>
         </div>
-
-    </section>
-
-
-    <!-- SKILLS WAS HERE -->
-
-    <!-- AChivements were here
-    <section class="achievements">
-        <h3>Some of my Achievements:</h3>
-        <li>Passed High School with distinction</li>
-        <li>Accepted to University of Waterloo (Geomatics)</li>
-        <li>Accepted to University of Guelph Computer Science Honors</li>
-        <li>Awarded the President's Scholarship</li>
-        <li>
-            Awarded the <span class="highlight">Gold Badge</span> in C++ by
-            <a href="https://www.hackerrank.com/baasirishfaq" title="Go to Baasir's HackerRank" target="_blank"><span
-                    style="color: rgb(252, 249, 249);">HackerRank</span></a>
-        </li>
-        <li>Rated as a 5-Star Coder by HackerRank</li>
-    </section> -->
-
-
-    <footer>
-        <hr>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/baasirishfaq/" target="_blank">Linkedin</a>.
-        </p>
-        <p>Copyright © 2025 Baasir Ishfaq</p>
-
     </footer>
-    </section>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+    <script>
+        VANTA.HALO({
+            el: ".hero",
+            mouseControls: true,
+            touchControls: true,
+            minHeight: 100.00,
+            minWidth: 100.00,
+            baseColor: 0xbb0819,
+            backgroundColor: 0x0a0a0a, // deep black background
+            amplitudeFactor: 1.0,
+            xOffset: 0.2,
+            size: 0.9
+        });
+    </script>
 
 </body>
-</div>
 
 </html>

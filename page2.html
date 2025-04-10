@@ -4,56 +4,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NXTPG</title>
-    <link rel="stylesheet" href="page2style.css">
+    <title>Baasir Ishfaq | Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #050505;
+            --darker-bg: #030303;
+            --primary: #64ffda;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --card-bg: rgba(15, 23, 42, 0.7);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--dark-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--dark-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            background-color: rgba(5, 5, 5, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: color 0.3s;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.05);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.1);
+        }
+
+        .hackathon-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            grid-column: 1 / -1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .card-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .card-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .card-company {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card-description {
+            list-style: none;
+        }
+
+        .card-description li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .card-description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .skills-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-top: 50px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .skill-name {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: rgba(100, 255, 218, 0.15);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--darker-bg);
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-around;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <section class="topmenu">
-        <a href="index.html">
-            <li>HOME</li>
-        </a>
-        <li>CONTACT</li>
-    </section>
-
-    <section class="exp">
-        <h1>Experience and Education</h1>
-        <div class="job">
-            <h3>Software/Web Developer</h3>
-            <p><strong>University of Guelph School of Engneering (CoCreCo Club)</strong> - Canada, ON</p>
-            <p><em>January 2025 - Present</em></p>
-            <ul>
-                <li>Engineering Collaborative Club, Funded by the University of Guelph.</li>
-                <li>Working on Web/Software Development and image recognition models using Raspberry Pi.</li>
-                <li>Web Hosting and Development using HTML tailwind Css and React.js </li>
-                <li>Participated in code reviews and helped optimize application performance.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <h3>Education</h3>
-            <p><strong>University of Guelph</strong> - Canada, On</p>
-            <p><em>September 2024 - Present</em></p>
-            <ul>
-                <li>President's Scholarship.</li>
-                <li>Scholarship for Merit.</li>
-                <li>Accecpted to Computer Scicence with Honors Co-Op.</li>
-            </ul>
-        </div>
-    </section>
-    </section>
-
-    <section class="skills">
-        <h2>Technical Skills:</h2>
-        <ul>
-            <li><img src="languagelogos/c++.png" title="C++" alt="C++ Logo"></li>
-            <li><img src="languagelogos/c.png" title="C" alt="C Logo"></li>
-            <li><img src="languagelogos/HTML.png" title="HTML" alt="HTML Logo"></li>
-            <li><img src="languagelogos/css.png" title="CSS" alt="CSS Logo"></li>
-            <li><img src="languagelogos/python.png" title="Python" alt="Python Logo"></li>
+    <!-- Minimal Particle Background -->
+    <div id="particles-js"></div>
+    
+    <nav>
+        <div class="logo">BAASIR ISHFAQ</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#hackathon">Hackathon</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
-    </section>
+    </nav>
 
+    <main>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Software/Web Developer</h3>
+                            <span class="card-date">Jan 2025 - Present</span>
+                        </div>
+                        <span class="card-company">University of Guelph School of Engineering</span>
+                        <span class="card-location">CoCreCo Club • Guelph, ON</span>
+                        <ul class="card-description">
+                            <li>Engineering collaborative club funded by the University</li>
+                            <li>Developing web applications and image recognition models using Raspberry Pi</li>
+                            <li>Web development using HTML, Tailwind CSS, and React.js</li>
+                            <li>Participated in code reviews and performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hackathon Section -->
+        <section id="hackathon" class="section">
+            <div class="container">
+                <h2 class="section-title">Hackathon Project</h2>
+                <div class="experience-grid">
+                    <div class="hackathon-card">
+                        <div class="card-header">
+                            <h3 class="card-title">StreetSense - AI Visual Assistant</h3>
+                            <span class="card-date">Hack Canada 2024 • Waterloo</span>
+                        </div>
+                        <span class="card-company">Accessibility Tech for Visually Impaired</span>
+                        <span class="card-location">24-Hour Hackathon Project</span>
+                        
+                        <ul class="card-description">
+                            <li>Engineered real-time mobile navigation system achieving <strong>93% detection accuracy</strong></li>
+                            <li>Custom-trained <strong>YOLOv8 Nano</strong> model (96.4% mAP@0.5) on 50,000+ images</li>
+                            <li>Integrated <strong>Gemini Nano LLM</strong> with 300ms response time</li>
+                            <li>Hybrid edge-cloud architecture reducing latency by <strong>40%</strong></li>
+                        </ul>
+                        
+                        <div style="margin-top: 20px;">
+                            <span class="tech-badge">TensorFlow Lite</span>
+                            <span class="tech-badge">YOLOv8</span>
+                            <span class="tech-badge">Gemini Nano</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Computer Science (Honors Co-op)</h3>
+                            <span class="card-date">Sep 2024 - Present</span>
+                        </div>
+                        <span class="card-company">University of Guelph</span>
+                        <span class="card-location">Guelph, ON</span>
+                        <ul class="card-description">
+                            <li>President's Scholarship recipient</li>
+                            <li>Scholarship for Merit recipient</li>
+                            <li>Specializing in software development and algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <img src="languagelogos/c++.png" alt="C++" class="skill-icon">
+                            <span class="skill-name">C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="languagelogos/c.png" alt="C" class="skill-icon">
+                            <span class="skill-name">C</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="languagelogos/python.png" alt="Python" class="skill-icon">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="languagelogos/HTML.png" alt="HTML" class="skill-icon">
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="languagelogos/css.png" alt="CSS" class="skill-icon">
+                            <span class="skill-name">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">Designed & Built by Baasir Ishfaq</p>
+        </div>
+    </footer>
+
+    <!-- Minimal Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#64ffda"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": true
+                },
+                "size": {
+                    "value": 2.5,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#64ffda",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
