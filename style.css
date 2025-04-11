@@ -160,6 +160,49 @@ nav {
   box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
 }
 
+/* Add this CSS for the text animation */
+.changing-text-container {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  vertical-align: bottom;
+  margin-left: 8px; /* Small gap after "Computer Science" */
+}
+
+.changing-text {
+  position: absolute;
+  left: 0;
+  width: max-content; /* Better for variable width text */
+  color: var(--secondary-color);
+  animation: textSwitch 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  opacity: 0;
+  pointer-events: none; /* Prevents interaction with invisible text */
+}
+
+@keyframes textSwitch {
+  0%, 35% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  40%, 60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  65%, 100% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+/* Timing for two words */
+.changing-text:nth-child(1) { animation-delay: 0s; }
+.changing-text:nth-child(2) { animation-delay: 2s; }
+
+/* Add this to your hero h1 styles */
+.hero h1 {
+  white-space: nowrap; /* Prevents line break during animation */
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 50px;
