@@ -238,7 +238,7 @@ nav {
 
 /* About Section */
 .about-section {
-  padding: 100px 0;
+  padding: 0;
   background-color: var(--primary-color);
 }
 
