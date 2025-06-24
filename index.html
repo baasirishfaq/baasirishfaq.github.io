@@ -8,6 +8,89 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;700;900&display=swap');
 
+    @media (max-width: 768px) {
+    :root {
+      --primary-green: #ff00b3;
+      --secondary-green: #39ff14;
+    }
+    
+    body {
+      height: auto;
+      min-height: 100vh;
+      overflow: auto;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    #terminal-container {
+      padding: 0.25rem;
+      height: auto;
+      min-height: 100vh;
+    }
+    
+    #terminal-header {
+      padding: 0.75rem;
+      font-size: 0.8rem;
+    }
+    
+    .terminal-title {
+      font-size: 0.7rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    #output {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+    
+    #input-container {
+      padding: 0.5rem;
+    }
+    
+    #prompt {
+      font-size: 0.85rem;
+    }
+    
+    #command {
+      font-size: 0.85rem;
+    }
+    
+    .project-card {
+      padding: 1rem;
+      grid-template-columns: 1fr !important;
+    }
+    
+    .ascii-art {
+      font-size: 0.7rem;
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+    }
+    
+    /* Disable some animations on mobile */
+    body::before,
+    #cyber-overlay {
+      animation: none;
+      opacity: 0.1;
+    }
+    
+    /* Simplify layout grids */
+    .response > div {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+    
+    /* Make sure input is properly sized */
+    #input-line {
+      gap: 0.5rem;
+    }
+  }
+  
     :root {
       --primary-green: #ff00b3;
       --secondary-green: #39ff14;
@@ -1684,6 +1767,45 @@ Try 'help' for actual commands!
         document.getElementById('terminal').style.opacity = '1';
       }, 400);
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Detect mobile devices
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Adjust viewport for mobile
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+      document.head.appendChild(viewportMeta);
+      
+      // Simplify some animations
+      document.querySelectorAll('.progress-fill').forEach(el => {
+        el.style.animation = 'none';
+        el.style.width = '100%';
+      });
+      
+      // Make input more touch-friendly
+      const commandInput = document.getElementById('command');
+      commandInput.style.minHeight = '44px'; // Apple's recommended touch target size
+      commandInput.style.padding = '12px';
+    }
+    
+    // Prevent keyboard from pushing content up on iOS
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      let viewport = document.querySelector("meta[name=viewport]");
+      if (viewport) {
+        viewport.content = viewport.content + ", height=" + window.innerHeight;
+      }
+      
+      window.addEventListener('resize', function() {
+        if (document.activeElement.tagName === 'INPUT') {
+          window.scrollTo(0, 0);
+          document.body.scrollTop = 0;
+        }
+      });
+    }
+  });
 
     document.querySelector('.maximize').addEventListener('click', () => {
       document.getElementById('terminal').style.transition = 'all 0.3s ease-out';
