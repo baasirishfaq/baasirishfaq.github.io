@@ -10,12 +10,10 @@
 
     @media (max-width: 768px) {
     :root {
-      --primary-green: #ff00b3;
-      --secondary-green: #39ff14;
+      --primary-cyan: #00ffff;
+      --secondary-blue: #0066ff;
     }
 
-    
-    
     body {
       height: auto;
       min-height: 100vh;
@@ -74,36 +72,33 @@
       padding: 0.3rem 0.6rem;
     }
     
-    /* Disable some animations on mobile */
     body::before,
     #cyber-overlay {
       animation: none;
       opacity: 0.1;
     }
     
-    /* Simplify layout grids */
     .response > div {
       grid-template-columns: 1fr !important;
       gap: 1rem !important;
     }
     
-    /* Make sure input is properly sized */
     #input-line {
       gap: 0.5rem;
     }
   }
   
     :root {
-      --primary-green: #ff00b3;
-      --secondary-green: #39ff14;
-      --accent-cyan: #00ffff;
-      --accent-purple: #ff00ff;
-      --accent-orange: #ff5e00;
-      --dark-bg: #0a0a0a;
+      --primary-cyan: #00ffff;
+      --secondary-blue: #0066ff;
+      --accent-cyan: #00ccff;
+      --accent-purple: #9900ff;
+      --accent-blue: #0066ff;
+      --dark-bg: #000000;
       --darker-bg: #050505;
-      --card-bg: rgba(15, 15, 15, 0.95);
+      --card-bg: rgba(0, 0, 0, 0.95);
       --white: #ffffff;
-      --blue: #00aaff;
+      --blue: #0066ff;
       --yellow: #ffaa00;
       --red: #ff4444;
       --gray: #888888;
@@ -116,11 +111,11 @@
     }
 
     body {
-      background:
-        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.08) 0%, transparent 50%),
-        linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
-      color: var(--primary-green);
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+      color: var(--primary-cyan);
       font-family: 'JetBrains Mono', monospace;
       line-height: 1.6;
       height: 100vh;
@@ -138,29 +133,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image:
-        radial-gradient(2px 2px at 20px 30px, var(--primary-green), transparent),
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--primary-cyan), transparent),
         radial-gradient(2px 2px at 40px 70px, var(--accent-cyan), transparent),
         radial-gradient(1px 1px at 90px 40px, var(--accent-purple), transparent),
-        radial-gradient(1px 1px at 130px 80px, var(--primary-green), transparent);
+        radial-gradient(1px 1px at 130px 80px, var(--primary-cyan), transparent);
       background-repeat: repeat;
       background-size: 200px 100px;
       animation: sparkle 20s linear infinite;
       opacity: 0.3;
       pointer-events: none;
     }
-
-    /* @keyframes sparkle {
-
-            0%,
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-10px) rotate(180deg);
-            }
-        } makes it slower */
 
     #terminal-container {
       display: flex;
@@ -177,32 +160,24 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background:
-        linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px);
+      background: 
+        linear-gradient(rgba(0, 102, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 25px 25px;
       pointer-events: none;
       z-index: 0;
       animation: gridPulse 4s ease-in-out infinite;
     }
 
-
     @keyframes gridPulse {
-
-      0%,
-      100% {
-        opacity: 0.3;
-      }
-
-      50% {
-        opacity: 0.1;
-      }
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.1; }
     }
 
     #terminal-header {
       background: linear-gradient(135deg,
-          var(--primary-green) 0%,
-          var(--accent-cyan) 50%,
+          var(--primary-cyan) 0%,
+          var(--accent-blue) 50%,
           var(--accent-purple) 100%);
       padding: 1rem 1.5rem;
       display: flex;
@@ -213,8 +188,8 @@
       border-radius: 12px 12px 0 0;
       position: relative;
       z-index: 1;
-      box-shadow:
-        0 0 30px rgba(0, 255, 136, 0.4),
+      box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
     }
@@ -239,17 +214,9 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
-    .close {
-      background: linear-gradient(135deg, #ff5f57, #ff3030);
-    }
-
-    .minimize {
-      background: linear-gradient(135deg, #ffbd2e, #ffa500);
-    }
-
-    .maximize {
-      background: linear-gradient(135deg, #28ca42, #20a030);
-    }
+    .close { background: linear-gradient(135deg, #ff5f57, #ff3030); }
+    .minimize { background: linear-gradient(135deg, #ffbd2e, #ffa500); }
+    .maximize { background: linear-gradient(135deg, #28ca42, #20a030); }
 
     .terminal-title {
       flex-grow: 1;
@@ -266,15 +233,15 @@
       flex-direction: column;
       background: var(--card-bg);
       border: 2px solid transparent;
-      border-image: linear-gradient(135deg, var(--primary-green), var(--accent-cyan), var(--accent-purple)) 1;
+      border-image: linear-gradient(135deg, var(--primary-cyan), var(--accent-blue), var(--accent-purple)) 1;
       border-top: none;
       border-radius: 0 0 12px 12px;
       overflow: hidden;
       position: relative;
       z-index: 1;
-      box-shadow:
-        0 0 40px rgba(0, 255, 136, 0.3),
-        inset 0 0 20px rgba(0, 255, 136, 0.05);
+      box-shadow: 
+        0 0 40px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(0, 102, 255, 0.05);
       backdrop-filter: blur(15px);
     }
 
@@ -290,20 +257,20 @@
     }
 
     #output::-webkit-scrollbar-track {
-      background: rgba(0, 255, 136, 0.1);
+      background: rgba(0, 255, 255, 0.1);
       border-radius: 5px;
     }
 
     #output::-webkit-scrollbar-thumb {
-      background: linear-gradient(135deg, var(--primary-green), var(--accent-cyan));
+      background: linear-gradient(135deg, var(--primary-cyan), var(--accent-blue));
       border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
     }
 
     #input-container {
       padding: 1rem 1.5rem;
-      background: rgba(0, 255, 136, 0.05);
-      border-top: 1px solid rgba(0, 255, 136, 0.3);
+      background: rgba(0, 102, 255, 0.05);
+      border-top: 1px solid rgba(0, 255, 255, 0.3);
       position: relative;
       backdrop-filter: blur(10px);
     }
@@ -317,31 +284,19 @@
     #prompt {
       color: var(--accent-cyan);
       font-weight: 700;
-      /* text-shadow: 0 0 8px var(--accent-cyan); */
-      /* font-family: 'Orbitron', monospace; */
       animation: promptGlow 2s ease-in-out infinite alternate;
     }
-
-    /* @keyframes promptGlow {
-      0% {
-        text-shadow: 0 0 8px var(--accent-cyan);
-      }
-
-      100% {
-        text-shadow: 0 0 15px var(--accent-cyan), 0 0 25px var(--accent-cyan);
-      }
-    } */
 
     #command {
       background: transparent;
       border: none;
-      color: var(--primary-green);
+      color: var(--primary-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-size: 1rem;
       flex-grow: 1;
       outline: none;
-      caret-color: var(--primary-green);
-      text-shadow: 0 0 5px var(--primary-green);
+      caret-color: var(--primary-cyan);
+      text-shadow: 0 0 5px var(--primary-cyan);
     }
 
     .cmd {
@@ -361,27 +316,13 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.6;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
     }
 
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     .response {
@@ -390,27 +331,20 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .project-card {
       background: linear-gradient(135deg,
-          rgba(0, 255, 136, 0.08) 0%,
-          rgba(0, 170, 255, 0.06) 50%,
-          rgba(255, 0, 255, 0.04) 100%);
+          rgba(0, 255, 255, 0.08) 0%,
+          rgba(0, 102, 255, 0.06) 50%,
+          rgba(153, 0, 255, 0.04) 100%);
       border: 1px solid transparent;
       border-image: linear-gradient(135deg,
-          rgba(0, 255, 136, 0.4),
-          rgba(0, 170, 255, 0.3),
-          rgba(255, 0, 255, 0.2)) 1;
+          rgba(0, 255, 255, 0.4),
+          rgba(0, 102, 255, 0.3),
+          rgba(153, 0, 255, 0.2)) 1;
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
@@ -429,8 +363,8 @@
       height: 100%;
       background: linear-gradient(90deg,
           transparent,
-          rgba(0, 255, 136, 0.1),
           rgba(0, 255, 255, 0.1),
+          rgba(0, 102, 255, 0.1),
           transparent);
       transition: left 0.8s ease;
     }
@@ -441,60 +375,60 @@
 
     .project-card:hover {
       transform: translateY(-2px) scale(1.01);
-      box-shadow:
-        0 10px 30px rgba(0, 255, 136, 0.2),
-        0 0 20px rgba(0, 255, 255, 0.1);
+      box-shadow: 
+        0 10px 30px rgba(0, 255, 255, 0.2),
+        0 0 20px rgba(0, 102, 255, 0.1);
       border-image: linear-gradient(135deg,
-          rgba(0, 255, 136, 0.6),
-          rgba(0, 170, 255, 0.5),
-          rgba(255, 0, 255, 0.4)) 1;
+          rgba(0, 255, 255, 0.6),
+          rgba(0, 102, 255, 0.5),
+          rgba(153, 0, 255, 0.4)) 1;
     }
 
     .tech-tag {
       display: inline-block;
-      background: linear-gradient(135deg, rgba(0, 170, 255, 0.2), rgba(0, 255, 136, 0.1));
-      color: var(--blue);
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(0, 255, 255, 0.1));
+      color: var(--accent-cyan);
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       font-size: 0.85rem;
       margin: 0.3rem;
-      border: 1px solid rgba(0, 170, 255, 0.4);
+      border: 1px solid rgba(0, 102, 255, 0.4);
       transition: all 0.3s ease;
       backdrop-filter: blur(5px);
     }
 
     .tech-tag:hover {
-      background: linear-gradient(135deg, rgba(0, 170, 255, 0.3), rgba(0, 255, 136, 0.2));
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.3), rgba(0, 255, 255, 0.2));
       transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
     }
 
     a {
-      color: var(--blue);
+      color: var(--accent-cyan);
       text-decoration: none;
-      border-bottom: 1px dotted var(--blue);
+      border-bottom: 1px dotted var(--accent-cyan);
       transition: all 0.3s ease;
       position: relative;
     }
 
     a:hover {
-      color: var(--accent-cyan);
-      border-bottom-color: var(--accent-cyan);
-      text-shadow: 0 0 8px var(--accent-cyan);
+      color: var(--primary-cyan);
+      border-bottom-color: var(--primary-cyan);
+      text-shadow: 0 0 8px var(--primary-cyan);
       transform: translateY(-1px);
     }
 
     .ascii-art {
-      color: var(--blue);
+      color: var(--accent-blue);
       font-size: 1rem;
       line-height: 1.2;
       margin: 1.5rem 0;
       background: linear-gradient(135deg,
-          rgba(0, 170, 255, 0.08),
-          rgba(0, 255, 136, 0.05));
+          rgba(0, 102, 255, 0.08),
+          rgba(0, 255, 255, 0.05));
       padding: 1.5rem;
       border-radius: 8px;
-      border: 1px solid rgba(0, 170, 255, 0.3);
+      border: 1px solid rgba(0, 102, 255, 0.3);
       text-align: center;
       font-family: 'Orbitron', monospace;
       backdrop-filter: blur(5px);
@@ -517,13 +451,8 @@
     }
 
     @keyframes scanline {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .glitch {
@@ -531,41 +460,18 @@
     }
 
     @keyframes glitch {
-      0% {
-        transform: translate(0);
-        filter: hue-rotate(0deg);
-      }
-
-      20% {
-        transform: translate(-2px, 2px);
-        filter: hue-rotate(90deg);
-      }
-
-      40% {
-        transform: translate(-2px, -2px);
-        filter: hue-rotate(180deg);
-      }
-
-      60% {
-        transform: translate(2px, 2px);
-        filter: hue-rotate(270deg);
-      }
-
-      80% {
-        transform: translate(2px, -2px);
-        filter: hue-rotate(360deg);
-      }
-
-      100% {
-        transform: translate(0);
-        filter: hue-rotate(0deg);
-      }
+      0% { transform: translate(0); filter: hue-rotate(0deg); }
+      20% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
+      40% { transform: translate(-2px, -2px); filter: hue-rotate(180deg); }
+      60% { transform: translate(2px, 2px); filter: hue-rotate(270deg); }
+      80% { transform: translate(2px, -2px); filter: hue-rotate(360deg); }
+      100% { transform: translate(0); filter: hue-rotate(0deg); }
     }
 
     .progress-bar {
       width: 100%;
       height: 6px;
-      background: rgba(0, 255, 136, 0.2);
+      background: rgba(0, 255, 255, 0.2);
       border-radius: 3px;
       overflow: hidden;
       margin: 1rem 0;
@@ -575,8 +481,8 @@
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg,
-          var(--primary-green),
-          var(--accent-cyan),
+          var(--primary-cyan),
+          var(--accent-blue),
           var(--accent-purple));
       border-radius: 3px;
       animation: progressLoad 3s ease-out forwards;
@@ -598,23 +504,13 @@
     }
 
     @keyframes progressLoad {
-      from {
-        width: 0%;
-      }
-
-      to {
-        width: 100%;
-      }
+      from { width: 0%; }
+      to { width: 100%; }
     }
 
     @keyframes progressShine {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      100% {
-        transform: translateX(200%);
-      }
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
     }
 
     .skill-meter {
@@ -633,43 +529,31 @@
     .skill-bar {
       width: 8px;
       height: 12px;
-      background: rgba(0, 255, 136, 0.2);
+      background: rgba(0, 255, 255, 0.2);
       border-radius: 1px;
       transition: all 0.3s ease;
     }
 
     .skill-bar.filled {
-      background: linear-gradient(135deg, var(--primary-green), var(--accent-cyan));
-      box-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+      background: linear-gradient(135deg, var(--primary-cyan), var(--accent-blue));
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
     }
 
     .typing-effect {
       overflow: hidden;
-      border-right: 2px solid var(--primary-green);
+      border-right: 2px solid var(--primary-cyan);
       white-space: nowrap;
       animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
     }
 
     @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent;
-      }
-
-      50% {
-        border-color: var(--primary-green);
-      }
+      from, to { border-color: transparent; }
+      50% { border-color: var(--primary-cyan); }
     }
 
     .status-indicator {
@@ -681,48 +565,13 @@
       animation: statusPulse 2s ease-in-out infinite;
     }
 
-    .status-online {
-      background: var(--primary-green);
-    }
-
-    .status-busy {
-      background: var(--yellow);
-    }
-
-    .status-away {
-      background: var(--accent-purple);
-    }
+    .status-online { background: var(--primary-cyan); }
+    .status-busy { background: var(--yellow); }
+    .status-away { background: var(--accent-purple); }
 
     @keyframes statusPulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.6;
-        transform: scale(1.2);
-      }
-    }
-
-    @media (max-width: 768px) {
-      #terminal-container {
-        padding: 0.5rem;
-      }
-
-      #output {
-        padding: 1rem;
-      }
-
-      .project-card {
-        padding: 1rem;
-      }
-
-      .terminal-title {
-        font-size: 0.9rem;
-      }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
     }
   </style>
 </head>
@@ -738,7 +587,7 @@
         <div class="control-btn maximize"></div>
       </div>
       <div class="terminal-title">
-        ◉ BAASIR@DEVELOPER-TERMINAL:~$ v2.0 | SYSTEM READY ◉
+        ◉ BAASIR@DEV-TERMINAL:~$ v2.0 ◉
       </div>
     </div>
 
@@ -747,7 +596,7 @@
         <div class="response">
           <div class="ascii-art">
             <div class="typing-effect">
-              🚀 ALL SYSTEM ONLINE | NETWORK ACTIVE 🚀
+              🚀 SYSTEM ONLINE | NETWORK SECURE |  🚀
             </div>
           </div>
           <p>⚡ <span> Welcome to Baasir's Developer Terminal</span></p>
@@ -768,7 +617,7 @@
   </div>
 
   <script>
-    // Enhanced command system with clearer descriptions
+    // Enhanced command system with modern black theme
     const commands = {
       help: `
         <div class="response">
@@ -784,14 +633,13 @@
 
             <div>
               <span style="color: var(--accent-purple);">▶ GET IN TOUCH</span><br>
-              <span style="color: var(--blue);">•</span> contact - How to reach me<br>\
+              <span style="color: var(--blue);">•</span> contact - How to reach me<br>
               <span style="color: var(--blue);">•</span> personal - My interests & hobbies<br>
               <span style="color: var(--blue);">•</span> clear - Clear the screen<br>
-              
             </div>
 
             <div>
-              <span style="color: var(--accent-purple);">resume - Resume at a Glance</span><br>  
+              <span style="color: var(--accent-purple);">▶ resume - Resume at a Glance</span><br>  
             </div>
           </div>
           <br>
@@ -802,7 +650,7 @@
       about: `
         <div class="project-card">
           <h2 style="color: var(--white); margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">
-            👨‍💻 <span style="text-shadow: 0 0 10px var(--primary-green);">ABOUT ME</span>
+            👨‍💻 <span style="text-shadow: 0 0 10px var(--primary-cyan);">ABOUT ME</span>
           </h2>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
@@ -823,68 +671,64 @@
               <div style="margin-top: 1rem;">
                 <div class="tech-tag">President's Scholarship $5,500</div>
                 <div class="tech-tag">HackerRank Gold Badge</div>
-                <div class="tech-tag">Developer at CoCreCo Engineering Club</div>
+                <div class="tech-tag">Developer at University of Guelph Design and Engineering Club</div>
                 <div class="tech-tag">Open Source Contributor</div>
               </div>
             </div>
           </div>
-        
         </div>
       `,
 
       personal: `
-  <div class="project-card">
-    <h2 style="color: var(--white); margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">
-      🌟 <span style="text-shadow: 0 0 10px var(--primary-green);">KNOW ME</span>
-    </h2>
-    
-    <div style="margin-bottom: 1.5rem;">
-      
-      <ul style="margin-left: 1.5rem; list-style: none;">
-        <li style="margin-bottom: 1rem;">
-          <span class="status-indicator status-online"></span>
-          I've flown on legendary aircrafts the Boeing 747, Airbus A380, and A340 - four-engine beasts
-        </li>
-        
-        <li style="margin-bottom: 1rem;">
-          <span class="status-indicator status-online"></span>
-          I speak 5 languages, which helps me connect with people from different cultures
-        </li>
+        <div class="project-card">
+          <h2 style="color: var(--white); margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">
+            🌟 <span style="text-shadow: 0 0 10px var(--primary-cyan);">KNOW ME</span>
+          </h2>
+          
+          <div style="margin-bottom: 1.5rem;">
+            <ul style="margin-left: 1.5rem; list-style: none;">
+              <li style="margin-bottom: 1rem;">
+                <span class="status-indicator status-online"></span>
+                I've flown on legendary aircrafts the Boeing 747, Airbus A380, and A340 - four-engine beasts
+              </li>
+              
+              <li style="margin-bottom: 1rem;">
+                <span class="status-indicator status-online"></span>
+                I speak 5 languages, which helps me connect with people from different cultures
+              </li>
 
-        <li style="margin-bottom: 1rem;">
-          <span class="status-indicator status-online"></span>
-          I've also celebrated my birthday at 40,000ft, over the Atlantic Ocean in an Airbus A380 (Thx Lufthansa)
-        </li>
-        
-        <li style="margin-bottom: 1rem;">
-          <span class="status-indicator status-busy"></span>
-          I believe the Audi V10 TDI is a masterpiece of engineering and ofc the RB26DETT
-        </li>
-        
-        <li style="margin-bottom: 1rem;">
-          <span class="status-indicator status-online"></span>
-          Love learning about historical turning points
-        </li>
-        
-        <li>
-          <span class="status-indicator status-away"></span>
-          Will update shortly...
-        </li>
-      </ul>
-    </div>
-    
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-    <p style="color: var(--accent-cyan); text-align: center; font-style: italic; margin-top: 1rem;">
-    </p>
-  </div>
-`,
+              <li style="margin-bottom: 1rem;">
+                <span class="status-indicator status-online"></span>
+                I've also celebrated my birthday at 40,000ft, over the Atlantic Ocean in an Airbus A380 (Thx Lufthansa)
+              </li>
+              
+              <li style="margin-bottom: 1rem;">
+                <span class="status-indicator status-busy"></span>
+                I believe the Audi V10 TDI is a masterpiece of engineering and ofc the RB26DETT
+              </li>
+              
+              <li style="margin-bottom: 1rem;">
+                <span class="status-indicator status-online"></span>
+                Love learning about historical turning points
+              </li>
+              
+              <li>
+                <span class="status-indicator status-away"></span>
+                Will update shortly...
+              </li>
+            </ul>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      `,
 
       skills: `
         <div class="project-card">
           <h3 style="color: var(--white); font-family: 'Orbitron', monospace; margin-bottom: 1.5rem;">
-            ⚡ <span style="text-shadow: 0 0 10px var(--primary-green);">TECHNICAL SKILLS</span>
+            ⚡ <span style="text-shadow: 0 0 10px var(--primary-cyan);">TECHNICAL SKILLS</span>
           </h3>
           
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
@@ -1004,17 +848,17 @@
                   </div>
                 </div>
                 <div class="skill-meter">
-                  <span>AWS</span>
+                  <span>Firebase</span>
                   <div class="skill-bars">
                     <div class="skill-bar filled"></div>
                     <div class="skill-bar filled"></div>
                     <div class="skill-bar filled"></div>
-                    <div class="skill-bar"></div>
+                    <div class="skill-bar filled"></div>
                     <div class="skill-bar"></div>
                   </div>
                 </div>
                 <div class="skill-meter">
-                  <span>Docker</span>
+                  <span>AWS</span>
                   <div class="skill-bars">
                     <div class="skill-bar filled"></div>
                     <div class="skill-bar filled"></div>
@@ -1030,8 +874,6 @@
           <div class="progress-bar">
             <div class="progress-fill"></div>
           </div>
-          <p style="color: var(--accent-cyan); text-align: center; font-style: italic;">
-          </p>
         </div>
       `,
 
@@ -1040,12 +882,11 @@
           <h3 style="color: var(--accent-cyan); font-family: 'Orbitron', monospace; margin-bottom: 1rem;">
             🚀 STREET SENSE AI 
           </h3>
-          <p style="color: var(--gray); margin-bottom: 1rem;">Real-time mobile assistant using Python and TensorFlow Lite to help visually
-impaired users navigate urban environments | Feb 2025</p>
+          <p style="color: var(--gray); margin-bottom: 1rem;">Real-time mobile assistant using Python and TensorFlow Lite to help visually impaired users navigate urban environments | Feb 2025</p>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
-              <strong style="color: var(--primary-green);">▶ PERFORMANCE</strong>
+              <strong style="color: var(--primary-cyan);">▶ PERFORMANCE</strong>
               <div style="margin-top: 0.5rem;">
                 <div>🎯 95.2% accuracy</div>
                 <div>⚡ 300ms response</div>
@@ -1058,9 +899,9 @@ impaired users navigate urban environments | Feb 2025</p>
                 <div class="tech-tag">YOLOv8 Nano</div>
                 <div class="tech-tag">TensorFlow Lite</div>
                 <div class="tech-tag">OpenCV</div>
-<div class="tech-tag">
-  <a href="https://github.com/ElijahDAF/streetsense" target="_blank" rel="noopener noreferrer">Show Me</a>
-</div>
+                <div class="tech-tag">
+                  <a href="https://github.com/ElijahDAF/streetsense" target="_blank" rel="noopener noreferrer">Show Me</a>
+                </div>
               </div>
             </div>
             <div>
@@ -1086,7 +927,7 @@ impaired users navigate urban environments | Feb 2025</p>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
             <div>
-              <strong style="color: var(--primary-green);">▶ ACCURACY</strong>
+              <strong style="color: var(--primary-cyan);">▶ ACCURACY</strong>
               <div style="margin-top: 0.5rem;">
                 <div>🎯 80.4% prediction rate</div>
                 <div>⚡ 1.7s inference time</div>
@@ -1112,352 +953,242 @@ impaired users navigate urban environments | Feb 2025</p>
             </div>
           </div>
         </div>
+
+        <div class="project-card">
+          <h3 style="color: var(--accent-cyan); font-family: 'Orbitron', monospace; margin-bottom: 1rem;">
+            📝 RATE MY COURSE
+          </h3>
+          <p style="color: var(--gray); margin-bottom: 1rem;">Full-Stack Course Review Platform | Nov 2025</p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <strong style="color: var(--primary-cyan);">▶ SCALE</strong>
+              <div style="margin-top: 0.5rem;">
+                <div>📚 1,000+ courses</div>
+                <div>⚡ Real-time updates</div>
+                <div>📱 Responsive design</div>
+              </div>
+            </div>
+            <div>
+              <strong style="color: var(--yellow);">▶ TECH STACK</strong>
+              <div style="margin-top: 0.5rem;">
+                <div class="tech-tag">React.js</div>
+                <div class="tech-tag">Firebase</div>
+                <div class="tech-tag">Firestore</div>
+                <div class="tech-tag">JavaScript</div>
+                <div class="tech-tag">
+                  <a href="https://github.com/baasirishfaq/ratemycourse" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <strong style="color: var(--accent-purple);">▶ FEATURES</strong>
+              <div style="margin-top: 0.5rem;">
+                <div>🔐 Validation rules</div>
+                <div>📊 Structured schema</div>
+                <div>🔄 Dynamic content</div>
+              </div>
+            </div>
+          </div>
+          
+          <pre class="ascii-art">
+[REACT_UI] ⇄ [FIRESTORE] ⇄ [VALIDATION] ⇄ [REAL_TIME_SYNC]
+          </pre>
+        </div>
       `,
-      <!-- Add this to your commands object in the script section -->
+
       resume: `
-  <div class="project-card" style="padding: 2rem;">
-    <h2 style="color: var(--accent-cyan); font-family: 'Orbitron', monospace; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-green); padding-bottom: 0.5rem;">
-      📄 BAASIR ISHFAQ | COMPUTER SCIENCE (HONORS CO-OP)
-    </h2>
-    
-    <!-- Education Section -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-        <span class="status-indicator status-online"></span>
-        EDUCATION
-      </h3>
-      <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; margin-left: 1.5rem;">
-        <div style="font-weight: bold; color: var(--white);">University of Guelph</div>
-        <div>Expected Graduation: April 2028</div>
-        <div style="font-weight: bold; color: var(--white);">Bachelor of Science</div>
-        <div>Computer Science (Honors Co-op)</div>
-        <div style="font-weight: bold; color: var(--white);">Achievements</div>
-        <div>
-          <span class="tech-tag">President's Scholarship</span>
-          <span class="tech-tag">Merit Scholarship ($5500)</span>
-        </div>
-        <div style="font-weight: bold; color: var(--white);">Relevant Coursework</div>
-        <div>Data Structures, Computer Architecture, Compilers, Web Development, Calculus, Discrete Math</div>
-      </div>
-    </div>
-    
-    <!-- Technical Skills Section -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-purple); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-        <span class="status-indicator status-online"></span>
-        TECHNICAL SKILLS
-      </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-left: 1.5rem;">
-        <div>
-          <strong style="color: var(--primary-green);">Languages:</strong>
-          <div style="margin-top: 0.5rem;">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">C++</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">Swift</span>
+        <div class="project-card" style="padding: 2rem; background: rgba(0, 0, 0, 0.95);">
+          <h2 style="color: var(--accent-cyan); font-family: 'Orbitron', monospace; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary-cyan); padding-bottom: 0.5rem;">
+            📄 BAASIR ISHFAQ | COMPUTER SCIENCE (HONORS CO-OP)
+          </h2>
+          
+          <!-- Education Section -->
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="status-indicator status-online"></span>
+              EDUCATION
+            </h3>
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem; margin-left: 1.5rem;">
+              <div style="font-weight: bold; color: var(--white);">University of Guelph</div>
+              <div>Expected Graduation: April 2028</div>
+              <div style="font-weight: bold; color: var(--white);">Bachelor of Science</div>
+              <div>Computer Science (Honors Co-op)</div>
+              <div style="font-weight: bold; color: var(--white);">Achievements</div>
+              <div>
+                <span class="tech-tag">President's Scholarship</span>
+                <span class="tech-tag">Merit Scholarship ($5500)</span>
+              </div>
+              <div style="font-weight: bold; color: var(--white);">Relevant Coursework</div>
+              <div>Data Structures, Object Oriented Programming, Structure and Applications of Microcomputers, Operating Systems, Calculus, Discrete Math</div>
+            </div>
           </div>
-        </div>
-        <div>
-          <strong style="color: var(--primary-green);">Frameworks:</strong>
-          <div style="margin-top: 0.5rem;">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">Next.js</span>
+          
+          <!-- Technical Skills Section -->
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent-purple); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="status-indicator status-online"></span>
+              TECHNICAL SKILLS
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-left: 1.5rem;">
+              <div>
+                <strong style="color: var(--primary-cyan);">Languages:</strong>
+                <div style="margin-top: 0.5rem;">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Swift</span>
+                </div>
+              </div>
+              <div>
+                <strong style="color: var(--primary-cyan);">Frameworks:</strong>
+                <div style="margin-top: 0.5rem;">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">Firebase</span>
+                </div>
+              </div>
+              <div>
+                <strong style="color: var(--primary-cyan);">Tools:</strong>
+                <div style="margin-top: 0.5rem;">
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">AWS</span>
+                  <span class="tech-tag">Git</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">Firestore</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div>
-          <strong style="color: var(--primary-green);">Tools:</strong>
-          <div style="margin-top: 0.5rem;">
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">Git</span>
-            <span class="tech-tag">OpenCV</span>
-            <span class="tech-tag">Figma</span>
+          
+          <!-- Experience Section -->
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="status-indicator status-online"></span>
+              EXPERIENCE
+            </h3>
+            <div style="margin-left: 1.5rem;">
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <strong style="color: var(--white);">Software Developer</strong>
+                  <span style="color: var(--gray);">Jan 2025 - Present</span>
+                </div>
+                <div style="color: var(--accent-cyan); margin-bottom: 0.5rem;">University of Guelph Design and Engineering Club</div>
+                <ul style="margin-left: 1.5rem; color: var(--gray);">
+                  <li>Working on automation of book rental system for 1,200+ students using Raspberry Pi, OpenCV, and PyTorch</li>
+                  <li>Achieved 93% accuracy in book identification through model optimization</li>
+                  <li>Building React.js dashboard improving administrative efficiency</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Experience Section -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-        <span class="status-indicator status-online"></span>
-        EXPERIENCE
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <strong style="color: var(--white);">Software Developer</strong>
-            <span style="color: var(--gray);">Jan 2025 - Present</span>
+          
+          <!-- Projects Section -->
+          <div style="margin-bottom: 2rem;">
+            <h3 style="color: var(--accent-purple); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="status-indicator status-online"></span>
+              PROJECTS
+            </h3>
+            <div style="margin-left: 1.5rem;">
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <strong style="color: var(--white);">Street Sense AI</strong>
+                  <span style="color: var(--gray);">Feb 2025</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">YOLOv8</span>
+                  <span class="tech-tag">Gemini AI</span>
+                </div>
+                <ul style="margin-left: 1.5rem; color: var(--gray);">
+                  <li>Real-time mobile assistant for visually impaired with 95% accuracy</li>
+                  <li>LLM interpretation (Gemini Nano) for complex street signs</li>
+                  <li>300ms response time (faster than human reaction)</li>
+                </ul>
+              </div>
+              
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <strong style="color: var(--white);">Rate My Course</strong>
+                  <span style="color: var(--gray);">Nov 2025</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">Firestore</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <ul style="margin-left: 1.5rem; color: var(--gray);">
+                  <li>Built full-stack web application managing 1,000+ course listings</li>
+                  <li>Designed Firestore database schema with validation rules for structured data storage</li>
+                  <li>Implemented responsive interface with real-time database integration</li>
+                </ul>
+              </div>
+              
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <strong style="color: var(--white);">Stock Price Prediction</strong>
+                  <span style="color: var(--gray);">Apr 2025</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">Streamlit</span>
+                  <span class="tech-tag">YF API</span>
+                </div>
+                <ul style="margin-left: 1.5rem; color: var(--gray);">
+                  <li>LSTM neural network with 80% training accuracy</li>
+                  <li>Real-time forecasting with 100-day lookback windows</li>
+                  <li>Interactive dashboard with moving averages visualization</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div style="color: var(--accent-cyan); margin-bottom: 0.5rem;">University of Guelph School of Engineering CoCreCo Club</div>
-          <ul style="margin-left: 1.5rem; color: var(--gray);">
-            <li>Developed smart book rental system serving 1,200+ students using Raspberry Pi, OpenCV, and PyTorch</li>
-            <li>Achieved 93% accuracy in book identification through model optimization</li>
-            <li>Built React.js dashboard improving administrative efficiency</li>
-            <li>Increased system reliability by 25% through cross-functional collaboration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Projects Section -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-purple); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-        <span class="status-indicator status-online"></span>
-        PROJECTS
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <strong style="color: var(--white);">Street Sense AI</strong>
-            <span style="color: var(--gray);">Feb 2025</span>
+          
+          <!-- Achievements Section -->
+          <div>
+            <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="status-indicator status-online"></span>
+              ACHIEVEMENTS
+            </h3>
+            <div style="margin-left: 1.5rem;">
+              <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--white);">Gold Badge in C++ (HackerRank)</strong>
+                <ul style="margin-left: 1.5rem; color: var(--gray); margin-top: 0.5rem;">
+                  <li>Solved 100+ programming challenges (top 5%)</li>
+                  <li>Consistent optimal solutions (O(n log n) or better)</li>
+                </ul>
+              </div>
+              <div>
+                <strong style="color: var(--white);">5-Star Rated Coder (HackerRank)</strong>
+                <ul style="margin-left: 1.5rem; color: var(--gray); margin-top: 0.5rem;">
+                  <li>Top 10% global ranking in Problem Solving</li>
+                  <li>Expertise in algorithms and mathematical computing</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">YOLOv8</span>
-            <span class="tech-tag">Gemini AI</span>
+          
+          <div class="progress-bar" style="margin-top: 2rem;">
+            <div class="progress-fill"></div>
           </div>
-          <ul style="margin-left: 1.5rem; color: var(--gray);">
-            <li>Real-time mobile assistant for visually impaired with 95% accuracy</li>
-            <li>LLM interpretation (Gemini Nano) for complex street signs</li>
-            <li>300ms response time (faster than human reaction)</li>
-          </ul>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-            <strong style="color: var(--white);">Stock Price Prediction</strong>
-            <span style="color: var(--gray);">Apr 2025</span>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">YF API</span>
-          </div>
-          <ul style="margin-left: 1.5rem; color: var(--gray);">
-            <li>LSTM neural network with 80% training accuracy</li>
-            <li>Real-time forecasting with 100-day lookback windows</li>
-            <li>Interactive dashboard with moving averages visualization</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Achievements Section -->
-    <div>
-      <h3 style="color: var(--yellow); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
-        <span class="status-indicator status-online"></span>
-        ACHIEVEMENTS
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="margin-bottom: 1rem;">
-          <strong style="color: var(--white);">Gold Badge in C++ (HackerRank)</strong>
-          <ul style="margin-left: 1.5rem; color: var(--gray); margin-top: 0.5rem;">
-            <li>Solved 100+ programming challenges (top 5%)</li>
-            <li>Consistent optimal solutions (O(n log n) or better)</li>
-          </ul>
-        </div>
-        <div>
-          <strong style="color: var(--white);">5-Star Rated Coder (HackerRank)</strong>
-          <ul style="margin-left: 1.5rem; color: var(--gray); margin-top: 0.5rem;">
-            <li>Top 10% global ranking in Problem Solving</li>
-            <li>Expertise in algorithms and mathematical computing</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <div class="progress-bar" style="margin-top: 2rem;">
-      <div class="progress-fill"></div>
-    </div>
-    <p style="color: var(--accent-cyan); text-align: center; margin-top: 1rem;">
-      For a PDF version, please contact me via the 'contact' command
-    </p>
-  </div>  `, 
-  
-  resume: `
-  <div class="project-card" style="padding: 1.5rem; background: rgba(20, 20, 20, 0.9); border: 1px solid rgba(0, 255, 136, 0.2);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--primary-green); padding-bottom: 0.5rem;">
-      <h2 style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-weight: 500;">
-        BAASIR ISHFAQ
-      </h2>
-      <div style="color: var(--gray); font-size: 0.9rem;">
-        Developer | AI Enthusiast | Polyglot
-      </div>
-    </div>
-    
-    <!-- Personal Details -->
-    <div style="margin-bottom: 2rem;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1rem;">
-        <div>
-          <div style="color: var(--primary-green); margin-bottom: 0.5rem;">▸ PERSONAL PROFILE</div>
-          <p style="color: var(--gray); line-height: 1.6; font-size: 0.95rem;">
-            Passionate computer science student with focus on AI/ML systems. 
-            Fluent in 5 languages. Aviation and automotive enthusiast who 
-            appreciates engineering marvels like the Audi V10 TDI and RB26DETT.
+          <p style="color: var(--accent-cyan); text-align: center; margin-top: 1rem;">
+            For a PDF version, please contact me via the 'contact' command
           </p>
         </div>
-        <div>
-          <div style="color: var(--primary-green); margin-bottom: 0.5rem;">▸ CORE INTERESTS</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-            <span class="tech-tag" style="background: rgba(0, 170, 255, 0.1);">Computer Vision</span>
-            <span class="tech-tag" style="background: rgba(0, 255, 136, 0.1);">Neural Networks</span>
-            <span class="tech-tag" style="background: rgba(255, 0, 255, 0.1);">Edge AI</span>
-            <span class="tech-tag" style="background: rgba(255, 94, 0, 0.1);">Language Models</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Education -->
-
-
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center;">
-        <span style="display: inline-block; width: 8px; height: 8px; background: var(--primary-green); border-radius: 50%; margin-right: 0.5rem;"></span>
-        EDUCATION
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-          <strong style="color: var(--white);">University of Guelph</strong>
-          <span style="color: var(--gray); font-size: 0.9rem;">2024-2028</span>
-        </div>
-        <div style="color: var(--gray); margin-bottom: 0.75rem; font-size: 0.95rem;">
-          B.Sc. Computer Science (Honors Co-op) • President's Scholarship ($5,500)
-        </div>
-        <div style="color: var(--gray); font-size: 0.9rem; line-height: 1.6;">
-          Focused coursework in: Machine Learning, Computer Vision, Distributed Systems, 
-          Advanced Algorithms, and Computational Neuroscience.
-        </div>
-      </div>
-    </div>
-
-    <!-- Technical Skills -->
-
-
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center;">
-        <span style="display: inline-block; width: 8px; height: 8px; background: var(--primary-green); border-radius: 50%; margin-right: 0.5rem;"></span>
-        TECHNICAL EXPERTISE
-      </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-left: 1.5rem;">
-        <div>
-          <div style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 0.9rem;">LANGUAGES</div>
-          <div style="color: var(--gray); line-height: 1.8; font-size: 0.9rem;">
-            Python (Expert)<br>
-            C++ (Advanced)<br>
-            Java/TypeScript<br>
-            Swift/SQL/Bash
-          </div>
-        </div>
-        <div>
-          <div style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 0.9rem;">AI/ML STACK</div>
-          <div style="color: var(--gray); line-height: 1.8; font-size: 0.9rem;">
-            PyTorch/TensorFlow<br>
-            OpenCV/YOLO<br>
-            LangChain/RAG<br>
-            ONNX/TensorRT
-          </div>
-        </div>
-        <div>
-          <div style="color: var(--primary-green); margin-bottom: 0.5rem; font-size: 0.9rem;">SYSTEMS</div>
-          <div style="color: var(--gray); line-height: 1.8; font-size: 0.9rem;">
-            Docker/Kubernetes<br>
-            AWS/Azure<br>
-            Redis/Kafka<br>
-            CI/CD Pipelines
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Experience -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center;">
-        <span style="display: inline-block; width: 8px; height: 8px; background: var(--primary-green); border-radius: 50%; margin-right: 0.5rem;"></span>
-        
-        
-        PROFESSIONAL EXPERIENCE
-
-
-
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-            <strong style="color: var(--white);">Software Developer</strong>
-            <span style="color: var(--gray); font-size: 0.9rem;">Jan 2025-Present</span>
-          </div>
-          <div style="color: var(--gray); font-size: 0.9rem; margin-bottom: 0.5rem;">University of Guelph CoCreCo Engineering Club</div>
-          <ul style="color: var(--gray); font-size: 0.9rem; line-height: 1.7; list-style-type: '→ '; padding-left: 1rem;">
-            <li style="margin-bottom: 0.5rem;">Developed Raspberry Pi-based book tracking system with 93% detection accuracy</li>
-            <li style="margin-bottom: 0.5rem;">Optimized PyTorch model through quantization (3.2x speedup)</li>
-            <li>Implemented React dashboard reducing admin workload by 40%</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Projects -->
-    <div style="margin-bottom: 2rem;">
-      <h3 style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center;">
-        <span style="display: inline-block; width: 8px; height: 8px; background: var(--primary-green); border-radius: 50%; margin-right: 0.5rem;"></span>
-        PROJECTS
-      </h3>
-      <div style="margin-left: 1.5rem;">
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-            <strong style="color: var(--white);">StreetSense AI</strong>
-            <span style="color: var(--gray); font-size: 0.9rem;">Feb 2025</span>
-          </div>
-          <div style="color: var(--gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
-            <span class="tech-tag" style="font-size: 0.8rem;">YOLOv8 Nano</span>
-            <span class="tech-tag" style="font-size: 0.8rem;">Gemini Nano</span>
-            <span class="tech-tag" style="font-size: 0.8rem;">TensorFlow Lite</span>
-          </div>
-          <ul style="color: var(--gray); font-size: 0.9rem; line-height: 1.7; list-style-type: '→ '; padding-left: 1rem;">
-            <li style="margin-bottom: 0.5rem;">95.2% accuracy on custom 50k image dataset</li>
-            <li style="margin-bottom: 0.5rem;">300ms end-to-end latency (faster than human reaction time)</li>
-            <li>Context-aware LLM interpretation of complex street signs</li>
-          </ul>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-            <strong style="color: var(--white);">Stock Price Predictor</strong>
-            <span style="color: var(--gray); font-size: 0.9rem;">Apr 2025</span>
-          </div>
-          <div style="color: var(--gray); font-size: 0.9rem; margin-bottom: 0.5rem;">
-            <span class="tech-tag" style="font-size: 0.8rem;">LSTM</span>
-            <span class="tech-tag" style="font-size: 0.8rem;">Monte Carlo</span>
-            <span class="tech-tag" style="font-size: 0.8rem;">YFinance API</span>
-          </div>
-          <ul style="color: var(--gray); font-size: 0.9rem; line-height: 1.7; list-style-type: '→ '; padding-left: 1rem;">
-            <li style="margin-bottom: 0.5rem;">3-layer LSTM with attention mechanism</li>
-            <li style="margin-bottom: 0.5rem;">80.4% prediction accuracy on test set</li>
-            <li>Real-time dashboard with technical indicators overlay</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div style="border-top: 1px solid rgba(0, 255, 136, 0.2); padding-top: 1rem; color: var(--gray); font-size: 0.85rem; text-align: center;">
-For complete resume or full PDF, please contact via <a href="mailto:bishfaq@uoguelph.ca" style="color: var(--blue); text-decoration: none; border-bottom: 1px dotted var(--blue);">bishfaq@uoguelph.ca</a>    </div>
-  </div>
-`,
+      `,
 
       contact: `
         <div class="project-card">
-          <h3 style="color: var(--primary-green); font-family: 'Orbitron', monospace; margin-bottom: 1.5rem;">
-            🔗 <span style="text-shadow: 0 0 10px var(--primary-green);">QUANTUM COMMUNICATION CHANNELS</span>
+          <h3 style="color: var(--primary-cyan); font-family: 'Orbitron', monospace; margin-bottom: 1.5rem;">
+            🔗 <span style="text-shadow: 0 0 10px var(--primary-cyan);">QUANTUM COMMUNICATION CHANNELS</span>
           </h3>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
@@ -1494,7 +1225,6 @@ For complete resume or full PDF, please contact via <a href="mailto:bishfaq@uogu
                   <span class="status-indicator status-busy"></span>
                   🤝 Available for collaboration
                 </div>
-
               </div>
             </div>
           </div>
@@ -1503,8 +1233,6 @@ For complete resume or full PDF, please contact via <a href="mailto:bishfaq@uogu
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <p style="color: var(--accent-cyan); font-style: italic;">
-            </p>
           </div>
         </div>
       `,
@@ -1553,25 +1281,26 @@ For complete resume or full PDF, please contact via <a href="mailto:bishfaq@uogu
           </p>
         </div>
       `,
+
       hack: `
         <div class="response">
           <div class="ascii-art" style="color: var(--red); animation: glitch 0.3s infinite;">
-<span style="color: var(--red);">⚠️  ACCESS DENIED ⚠️</span>
-
-Initiating security protocol...
-Tracing connection...
-<span style="color: var(--primary-green);">██████████</span> 100%
-
-<span style="color: var(--accent-cyan);">Just kidding! 😄</span>
-This is a portfolio, not a real terminal.
-Try 'help' for actual commands!
+            <span style="color: var(--red);">⚠️ ACCESS DENIED ⚠️</span>
+            
+            Initiating security protocol...
+            Tracing connection...
+            <span style="color: var(--primary-cyan);">██████████</span> 100%
+            
+            <span style="color: var(--accent-cyan);">Just kidding! 😄</span>
+            This is a portfolio, not a real terminal.
+            Try 'help' for actual commands!
           </div>
         </div>
       `,
 
       whoami: `
         <div class="response">
-          <p style="color: var(--primary-green);">Guest</p>
+          <p style="color: var(--primary-cyan);">Guest</p>
           <p style="color: var(--gray); font-size: 0.9em;">You are: Visitor exploring this portfolio</p>
           <p style="color: var(--gray); font-size: 0.9em;">Clearance Level: Guest</p>
           <p style="color: var(--gray); font-size: 0.9em;">Session Time: ${new Date().toLocaleTimeString()}</p>
@@ -1589,14 +1318,14 @@ Try 'help' for actual commands!
             I once spent 12 hours straight debugging
             only to find a missing semicolon 😅
             
-            <span style="color: var(--primary-green);">Thanks for exploring!</span>
+            <span style="color: var(--primary-cyan);">Thanks for exploring!</span>
           </div>
         </div>
       `,
 
       home: `
         <div class="response">
-          <h2 style="color: var(--primary-green);">Welcome to Baasir's Terminal</h2>
+          <h2 style="color: var(--primary-cyan);">Welcome to Baasir's Terminal</h2>
           <p style="color: var(--gray); font-size: 0.9em;">
             This is a simulated terminal showcasing my portfolio.
             Type 'help' for available commands or explore the projects.
@@ -1614,11 +1343,11 @@ Try 'help' for actual commands!
     let historyIndex = -1;
 
     commandInput.addEventListener('input', function () {
-      this.style.boxShadow = '0 0 15px rgba(0, 255, 136, 0.6)';
-      this.style.textShadow = '0 0 8px var(--primary-green)';
+      this.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.6)';
+      this.style.textShadow = '0 0 8px var(--primary-cyan)';
       setTimeout(() => {
         this.style.boxShadow = 'none';
-        this.style.textShadow = '0 0 5px var(--primary-green)';
+        this.style.textShadow = '0 0 5px var(--primary-cyan)';
       }, 150);
     });
 
@@ -1634,23 +1363,20 @@ Try 'help' for actual commands!
 
         output.innerHTML += `<div class="cmd">baasir@dev:~$ ${cmd}</div>`;
 
-        if (cmd === 'clear') 
-        {
+        if (cmd === 'clear') {
           output.innerHTML = '<span style="color: grey;"> Type `help` to see commands <br> Enjoy your stay! 🚀</span>';
-        } 
-        else if (commands[cmd]) {
+        } else if (commands[cmd]) {
           output.innerHTML += `<div class="response">${commands[cmd]}</div>`;
         } else if (cmd.includes('sudo') || cmd.includes('rm -rf') || cmd.includes('/')) {
           output.innerHTML += `<div class="response" style="color: var(--red);">
             ⚠️ SECURITY ALERT: Potential malicious command detected<br>
             🛡️ System protection enabled.
           </div>`;
-        }else if (cmd.includes('hi') || cmd.includes('hello') || cmd.includes('hey') || cmd.includes('yo')){
-            output.innerHTML += "Greetings and Salutations"
-        }
-        else if (cmd.includes('art')) {
-        output.innerHTML = "";
-        output.innerHTML += `<pre class="ascii-banner">
+        } else if (cmd.includes('hi') || cmd.includes('hello') || cmd.includes('hey') || cmd.includes('yo')) {
+          output.innerHTML += "Greetings and Salutations";
+        } else if (cmd.includes('art')) {
+          output.innerHTML = "";
+          output.innerHTML += `<pre class="ascii-banner">
                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                      
@@ -1669,19 +1395,17 @@ Try 'help' for actual commands!
                                                                                                                                                                                                                                      
                    /$$$$$$$                                                        /$$                                   /$$$$$$$$       /$$                                               /$$$$$$$        /$$$$$$$$       /$$    /$$
                   | $$__  $$                                                      |__/                                  |__  $$__/      | $$                                              | $$__  $$      | $$_____/      | $$   | $$
-                  | $$  \ $$        /$$$$$$         /$$$$$$         /$$$$$$$       /$$        /$$$$$$                      | $$         | $$$$$$$         /$$$$$$                         | $$  \ $$      | $$            | $$   | $$
+                  | $$  \\ $$        /$$$$$$         /$$$$$$         /$$$$$$$       /$$        /$$$$$$                      | $$         | $$$$$$$         /$$$$$$                         | $$  \\ $$      | $$            | $$   | $$
                   | $$$$$$$        |____  $$       |____  $$       /$$_____/      | $$       /$$__  $$                     | $$         | $$__  $$       /$$__  $$                        | $$  | $$      | $$$$$         |  $$ / $$/
-                  | $$__  $$        /$$$$$$$        /$$$$$$$      |  $$$$$$       | $$      | $$  \__/                     | $$         | $$  \ $$      | $$$$$$$$                        | $$  | $$      | $$__/          \  $$ $$/ 
-                  | $$  \ $$       /$$__  $$       /$$__  $$       \____  $$      | $$      | $$                           | $$         | $$  | $$      | $$_____/                        | $$  | $$      | $$              \  $$$/  
-                  | $$$$$$$/      |  $$$$$$$      |  $$$$$$$       /$$$$$$$/      | $$      | $$                           | $$         | $$  | $$      |  $$$$$$$                        | $$$$$$$/      | $$$$$$$$         \  $/   
-                  |_______/        \_______/       \_______/      |_______/       |__/      |__/                           |__/         |__/  |__/       \_______/                        |_______/       |________/          \_/    
+                  | $$__  $$        /$$$$$$$        /$$$$$$$      |  $$$$$$       | $$      | $$  \\__/                     | $$         | $$  \\ $$      | $$$$$$$$                        | $$  | $$      | $$__/          \\  $$ $$/ 
+                  | $$  \\ $$       /$$__  $$       /$$__  $$       \\____  $$      | $$      | $$                           | $$         | $$  | $$      | $$_____/                        | $$  | $$      | $$              \\  $$$/  
+                  | $$$$$$$/      |  $$$$$$$      |  $$$$$$$       /$$$$$$$/      | $$      | $$                           | $$         | $$  | $$      |  $$$$$$$                        | $$$$$$$/      | $$$$$$$$         \\  $/   
+                  |_______/        \\_______/       \\_______/      |_______/       |__/      |__/                           |__/         |__/  |__/       \\_______/                        |_______/       |________/          \\_/    
                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                         
-        </pre>`;
-        }
-
-        else {
+          </pre>`;
+        } else {
           output.innerHTML += `<div class="response" style="color: var(--red);">
             Command "${cmd}" not found<br>
             <span style="color: var(--gray);">Type 'help' for available commands</span>
@@ -1702,9 +1426,7 @@ Try 'help' for actual commands!
           top: output.scrollHeight,
           behavior: 'smooth'
         });
-      }
-
-      else if (e.key === 'ArrowUp') {
+      } else if (e.key === 'ArrowUp') {
         e.preventDefault();
         if (historyIndex > 0) {
           historyIndex--;
@@ -1740,8 +1462,8 @@ Try 'help' for actual commands!
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #000000, #1a1a1a);
-            color: #00ff88;
+            background: linear-gradient(135deg, #000000, #0a0a0a);
+            color: #00ffff;
             font-family: 'Orbitron', monospace;
             text-align: center;
           ">
@@ -1770,51 +1492,46 @@ Try 'help' for actual commands!
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-    // Detect mobile devices
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // Adjust viewport for mobile
-      const viewportMeta = document.createElement('meta');
-      viewportMeta.name = 'viewport';
-      viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-      document.head.appendChild(viewportMeta);
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       
-      // Simplify some animations
-      document.querySelectorAll('.progress-fill').forEach(el => {
-        el.style.animation = 'none';
-        el.style.width = '100%';
-      });
-      
-      // Make input more touch-friendly
-      const commandInput = document.getElementById('command');
-      commandInput.style.minHeight = '44px'; // Apple's recommended touch target size
-      commandInput.style.padding = '12px';
-    }
-    
-    // Prevent keyboard from pushing content up on iOS
-    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-      let viewport = document.querySelector("meta[name=viewport]");
-      if (viewport) {
-        viewport.content = viewport.content + ", height=" + window.innerHeight;
+      if (isMobile) {
+        const viewportMeta = document.createElement('meta');
+        viewportMeta.name = 'viewport';
+        viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+        document.head.appendChild(viewportMeta);
+        
+        document.querySelectorAll('.progress-fill').forEach(el => {
+          el.style.animation = 'none';
+          el.style.width = '100%';
+        });
+        
+        const commandInput = document.getElementById('command');
+        commandInput.style.minHeight = '44px';
+        commandInput.style.padding = '12px';
       }
       
-      window.addEventListener('resize', function() {
-        if (document.activeElement.tagName === 'INPUT') {
-          window.scrollTo(0, 0);
-          document.body.scrollTop = 0;
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        let viewport = document.querySelector("meta[name=viewport]");
+        if (viewport) {
+          viewport.content = viewport.content + ", height=" + window.innerHeight;
         }
-      });
-    }
-  });
+        
+        window.addEventListener('resize', function() {
+          if (document.activeElement.tagName === 'INPUT') {
+            window.scrollTo(0, 0);
+            document.body.scrollTop = 0;
+          }
+        });
+      }
+    });
 
     document.querySelector('.maximize').addEventListener('click', () => {
       document.getElementById('terminal').style.transition = 'all 0.3s ease-out';
       document.getElementById('terminal').style.transform = 'scale(1.05)';
-      document.getElementById('terminal').style.boxShadow = '0 0 50px rgba(0, 255, 136, 0.5)';
+      document.getElementById('terminal').style.boxShadow = '0 0 50px rgba(0, 255, 255, 0.5)';
       setTimeout(() => {
         document.getElementById('terminal').style.transform = 'scale(1)';
-        document.getElementById('terminal').style.boxShadow = '0 0 40px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 136, 0.05)';
+        document.getElementById('terminal').style.boxShadow = '0 0 40px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(0, 102, 255, 0.05)';
       }, 300);
     });
 
