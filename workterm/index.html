@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Summer work-term report by Baasir Ishfaq, Full-Stack Software Developer Intern at TextNow in Waterloo.">
+  <title>Work Term Report — Baasir Ishfaq at TextNow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to report</a>
+  <header class="bar">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">BAASIR ISHFAQ</a>
+      <div class="nav-right">
+        <div class="links" id="navigation-links">
+          <a href="#introduction">Introduction</a>
+          <a href="#employer">The Employer</a>
+          <a href="#job-description">Job Description</a>
+          <a href="#goals">Goals</a>
+          <a href="#conclusion">Conclusion</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-controls="navigation-links" aria-label="Open navigation" aria-expanded="false">≡</button>
+        <button class="theme-toggle" type="button" aria-label="Switch to light theme">Light mode</button>
+      </div>
+    </nav>
+  </header>
+  <main class="page" id="main-content">
+    <section class="mast" id="top" aria-labelledby="report-title">
+      <h1 id="report-title">Work Term Report</h1>
+      <p class="byline">Prepared by <strong>Baasir Ishfaq</strong></p>
+      <p class="placement"><strong>TextNow</strong><span class="dot">·</span>Full-Stack Software Developer Intern</p>
+    </section>
+    <section class="report-section introduction" id="introduction" aria-labelledby="introduction-title">
+      <header class="section-head"><span class="section-number">01 / 05</span><h2 id="introduction-title">Introduction</h2></header>
+      <p class="lead">This report summarizes my experience during my first co-op work term at TextNow, where I worked as a Full-Stack Software Developer Intern in Waterloo from May to August 2026. The company has offices in both Canada and the USA. The US office is based in San Francisco. I was working from the Canada office in Waterloo, which is also the company's headquarters. Over the term, I worked across full-stack software development, production support, data investigations, and internal tooling. This report outlines my responsibilities, contributions, the goals I set, and the skills I built during the term.</p>
+    </section>
+    <section class="report-section" id="employer" aria-labelledby="employer-title">
+      <header class="section-head"><span class="section-number">02 / 05</span><h2 id="employer-title">The Employer</h2></header>
+      <div class="employer-layout">
+        <div class="section-copy">
+          <p>TextNow is a telecom company that provides calling and messaging services through its mobile and web apps. It has millions users. Its products rely on software systems that need to stay reliable while serving a very large number of people. That is why areas like web development, backend services, data handling, testing, and production support are such important parts of the company's work.</p>
+          <p>We had a hybrid schedule, with three days a week working from the office. This gave me regular opportunities to collaborate with my team in person, ask questions, participate in discussions, sit in on meetings, and see how different roles all contribute to the same product. Those conversations were often really useful when I needed context on a task or wanted to check that I was going about a problem the right way.</p>
+        </div>
+        <figure class="employer-main"><img class="photo" src="assets/textnow-waterloo-office.jpg" alt="TextNow office in Waterloo, Ontario" loading="lazy" decoding="async"><figcaption class="caption">The TextNow office in Waterloo, Ontario.</figcaption></figure>
+      </div>
+      <p class="subheading">Workplace and team culture</p>
+      <div class="section-copy">
+        <p>While most of my co-op experience was focused on my projects and development work, there was also a social side to working at TextNow that I really enjoyed. It gave me a chance to step away from my usual tasks, spend time with my coworkers, and get to know people outside of my team. Having those opportunities made the overall experience feel more welcoming and helped me feel like I was part of the workplace rather than just a co-op student.
+TextNow also organized different activities where co-op students could spend time together outside of their regular projects.
+
+        <p>One of the co-op socials was held at Sky Zone, an indoor trampoline park, where the entire intern group took part together. I also had the opportunity to go out for dinner with my team at PUBLIC Kitchen & Bar in Kitchener. The dinner was hosted by the manager of my team, it was a nice way for us to take a break from work and celebrate the hard work we had put into our projects. It gave everyone a chance to relax, have some fun, and spend time together outside of the usual work environment.</p>
+</p>
+      </div>
+      <div class="events">
+        <figure><img class="photo" src="assets/coop-social.jpeg" alt="TextNow co-op students together at Sky Zone" loading="lazy" decoding="async"><figcaption class="caption">Co-op social with the intern group at Sky Zone.</figcaption></figure>
+        <figure><img class="photo" src="assets/team-dinner.jpg" alt="Team dinner at PUBLIC Kitchen and Bar in Kitchener" loading="lazy" decoding="async"><figcaption class="caption">Dinner with my team at PUBLIC Kitchen &amp; Bar in Kitchener.</figcaption></figure>
+      </div>
+    </section>
+    <section class="report-section" id="job-description" aria-labelledby="job-title">
+      <header class="section-head"><span class="section-number">03 / 05</span><h2 id="job-title">Job Description</h2></header>
+      <div class="section-copy">
+        <p>As a Full-Stack Software Developer Intern, I worked on both user-facing and backend work. My main responsibilities were building new features, handling deployments, investigating production behaviour, reviewing data tied to reported issues, and improving internal tools. A big part of the role was also talking to other teams to understand what they needed, then planning how to build it and get it launched. The role pushed me to understand how the separate parts of an application fit together instead of looking at each part on its own.</p>
+        <p>A typical task started with a ticket, a report, or a problem that needed looking into. I would first gather enough context to understand what the expected behaviour was. Then I would go through the relevant code and any available data, talk through the requirements with teammates, and narrow the problem down before making a change. Once I had made the change, I tested it, opened a pull request, responded to review comments, made any fixes that were needed, and then deployed it.</p>
+      </div>
+      <div class="media-row reverse">
+        <div class="section-copy">
+          <p>The job took patience when the cause of an issue was not obvious right away. I learned not to change code based on my first guess. Instead I tried to reproduce the behaviour, compare what should happen against what actually happened, and use that evidence to cut down the list of possible causes.</p>
+          <p>My university courses gave me a base in programming, databases, testing, and software design. The workplace made me apply those ideas in a much bigger codebase with set patterns and review standards. Reading unfamiliar code, picking up the business context, and making a safe change were skills I built on the job.</p>
+        </div>
+        <figure><img class="photo portrait" src="assets/working-at-office.jpg" alt="Baasir working at the TextNow Waterloo office" loading="lazy" decoding="async"><figcaption class="caption">Working from the TextNow Waterloo office.</figcaption></figure>
+      </div>
+      <p class="subheading">Innovation Challenge</p>
+      <div class="section-copy">
+        <p>During the term, the company ran an innovation challenge for the interns. The idea was to find a problem and build a solution for it or come up with something new and innovative and then present it to the company. I took part in it and worked on my own idea from the problem all the way to a working solution. My idea was accepted and deployed, and it started getting real users on the very first day. This was one of the highlights of my term because it let me take something from a rough concept to a live feature that people actually used, and it showed me what it looks like to own an idea end to end.</p>
+      </div>
+    </section>
+    <section class="report-section" id="goals" aria-labelledby="goals-title">
+      <header class="section-head"><span class="section-number">04 / 05</span><h2 id="goals-title">Goals</h2></header>
+      <div class="goal-list">
+        <article class="goal">
+          <div class="goal-top"><span class="goal-label">GOAL 01</span><div>
+            <h3>Build fluency with the tools, technologies, and development workflows used at TextNow.</h3>
+            <p>Starting in a new development environment meant getting comfortable with unfamiliar tools, technologies, and processes while also learning how the different systems fit together. I spent the beginning of my term setting up my development environment, learning the team's version control and code review practices, and exploring the codebase. As I worked on more tasks, I became more familiar with the team's workflows and needed less guidance to navigate the codebase, understand where changes belonged, and move work through development, review, and deployment.</p>
+          </div></div>
+        </article>
+        <article class="goal">
+          <div class="goal-top"><span class="goal-label">GOAL 02</span><div>
+            <h3>Strengthen my ability to investigate, debug, and solve technical problems independently.</h3>
+            <p>As I became more familiar with the codebase, I was able to take a more structured approach to unfamiliar technical issues instead of relying on others to point me toward the answer. I learned to reproduce problems, trace them through the relevant parts of the system, identify their root cause, and test potential solutions before submitting a fix. Feedback from teammates and senior engineers helped me improve this process, and I became increasingly comfortable taking an issue from investigation to deployment.</p>
+          </div></div>
+        </article>
+        <article class="goal">
+          <div class="goal-top"><span class="goal-label">GOAL 03</span><div>
+            <h3>Develop stronger confidence and clarity when communicating technical information to both technical and non-technical teammates.</h3>
+            <p>Early on, I found it challenging to communicate technical work concisely, particularly when explaining unfamiliar systems or asking for help. Feedback from my team helped me improve how I structured my updates and how I approached questions during standups, meetings, and planning discussions. I became more intentional about explaining the context behind an issue, clearly communicating what I had already investigated, and adjusting my explanations depending on who I was speaking with.</p>
+          </div></div>
+        </article>
+      </div>
+    </section>
+    <section class="report-section" id="conclusion" aria-labelledby="conclusion-title">
+      <header class="section-head"><span class="section-number">05 / 05</span><h2 id="conclusion-title">Conclusion</h2></header>
+      <div class="conclusion-copy">
+        <p>My co-op term at TextNow gave me the opportunity to contribute to a platform used by millions of users.</p>
+        <p>I got better at working across frontend and backend code, investigating issues using both code and data, and taking changes through testing and review. I also saw how much clear communication matters when several people share responsibility for the same product.</p>
+        <p>The term made me more confident working in an unfamiliar codebase and more careful about how I approach technical problems. I now spend more time confirming the problem before settling on a solution, and I am better at explaining my reasoning when I ask for feedback.</p>
+        <p>This experience will help me in my next work term because I can join a new team with a clearer understanding of professional development practices. I know how to learn from an existing system, use review feedback, and take on more ownership as my knowledge grows.</p>
+        <p>I want to thank my manager, my mentors, my teammates, and the other co-op students at TextNow for all their support throughout the term. Their feedback and their willingness to answer my questions played a big part in what I learned.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div><span>Baasir Ishfaq · Summer Work Term</span><a href="#top">Back to top</a></div></footer>
+</body>
+</html>
